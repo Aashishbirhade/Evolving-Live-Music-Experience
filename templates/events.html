@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+<head>
+    <title>Events</title>
+</head>
+<body>
+    <h1>Events</h1>
+    <form method="POST">
+        <label for="genre">Genre:</label>
+        <input type="text" name="genre">
+        <br>
+        <label for="artist">Artist:</label>
+        <input type="text" name="artist">
+        <br>
+        <label for="date">Date:</label>
+        <input type="date" name="date">
+        <br>
+        <label for="location">Location:</label>
+        <input type="text" name="location">
+        <br>
+        <button type="submit">Search</button>
+    </form>
+    <ul>
+        {% for event in events %}
+            <li>{{ event.name }} - {{ event.artist }} - {{ event.genre }} - {{ event.date }} - {{ event.location }}</li>
+        {% endfor %}
+    </ul>
+    <a href="{{ url_for('index') }}">Home</a>
+</body>
+</html>

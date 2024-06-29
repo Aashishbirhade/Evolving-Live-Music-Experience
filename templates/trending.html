@@ -1,0 +1,15 @@
+<!doctype html>
+<html>
+<head>
+    <title>Trending Events</title>
+</head>
+<body>
+    <h1>Trending Events</h1>
+    <ul>
+        {% for event in trending_events %}
+            <li>{{ event.name }} - {{ event.artist }} - {{ event.genre }} - {{ event.date }} - {{ event.location }}</li>
+        {% endfor %}
+    </ul>
+    <a href="{{ url_for('index') }}">Home</a>
+</body>
+</html>

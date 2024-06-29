@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MusiCon</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Roboto', sans-serif;
+            background-color: #121212;
+            color: #fff;
+        }
+
+        .container {
+            max-width: 1440px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+
+        .logo {
+            font-size: 28px;
+            color: #e91e63;
+            font-weight: bold;
+        }
+
+        nav a {
+            margin: 0 15px;
+            text-decoration: none;
+            color: #fff;
+            font-size: 16px;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #e91e63;
+        }
+
+        .auth-buttons {
+            display: flex;
+        }
+
+        .auth-buttons button {
+            margin-left: 10px;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        .sign-up {
+            background-color: #e91e63;
+            color: #fff;
+        }
+
+        .sign-up:hover {
+            background-color: #d81b60;
+            transform: scale(1.05);
+        }
+
+        .login {
+            background-color: #7b1fa2;
+            color: #fff;
+        }
+
+        .login:hover {
+            background-color: #6a1b9a;
+            transform: scale(1.05);
+        }
+
+        main {
+            margin-top: 30px;
+        }
+
+        .intro {
+            margin-bottom: 50px;
+        }
+
+        .intro h1 {
+            font-size: 36px;
+            color: #e91e63;
+        }
+
+        .join-now {
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #e91e63;
+            border: none;
+            border-radius: 5px;
+            color: #fff;
+            cursor: pointer;
+            font-size: 18px;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        .join-now:hover {
+            background-color: #d81b60;
+            transform: scale(1.05);
+        }
+
+        .events {
+            margin-bottom: 50px;
+        }
+
+        .events h2 {
+            font-size: 28px;
+            color: #e91e63;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .event-list {
+            display: flex;
+            justify-content: space-around;
+        }
+
+        .event {
+            text-align: center;
+            width: 30%;
+        }
+
+        .event img {
+            width: 100%;
+            border-radius: 10px;
+            margin-bottom: 15px;
+            transition: transform 0.3s;
+        }
+
+        .event img:hover {
+            transform: scale(1.05);
+        }
+
+        .event h3 {
+            font-size: 20px;
+            color: #e91e63;
+        }
+
+        .event p {
+            font-size: 16px;
+            color: #fff;
+        }
+
+        .live-streaming, .music-cart, .book-tickets {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .live-streaming h2, .music-cart h2, .book-tickets h2 {
+            font-size: 28px;
+            color: #e91e63;
+            margin-bottom: 20px;
+        }
+
+        .live-streaming p, .music-cart p, .book-tickets p {
+            font-size: 16px;
+            color: #fff;
+            margin-bottom: 20px;
+            max-width: 800px;
+            margin: 0 auto 20px auto;
+        }
+
+        .live-streaming-button, .my-cart-button, .book-tickets-button {
+            padding: 10px 20px;
+            background-color: #e91e63;
+            border: none;
+            border-radius: 5px;
+            color: #fff;
+            cursor: pointer;
+            font-size: 18px;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        .live-streaming-button:hover, .my-cart-button:hover, .book-tickets-button:hover {
+            background-color: #d81b60;
+            transform: scale(1.05);
+        }
+
+        footer {
+            margin-top: 40px;
+            padding: 20px 0;
+            background-color: #1f1f1f;
+            border-top: 2px solid #e91e63;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .footer-links a {
+            margin: 0 15px;
+            text-decoration: none;
+            color: #fff;
+            font-size: 16px;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: #e91e63;
+        }
+
+        .footer-logo {
+            font-size: 24px;
+            color: #e91e63;
+            font-weight: bold;
+        }
+
+        .flex-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .flex-item {
+            flex: 1;
+            margin: 10px;
+        }
+
+        .intro .flex-container img {
+            max-width: 60%; /* Adjust as necessary */
+        }
+        .ticket-section {
+    display: flex;
+    align-items: center;
+    margin-bottom: 50px;
+    text-align: left;
+}
+
+.ticket-section img {
+    width: 40%;
+    border-radius: 10px;
+    margin-right: 5%;
+}
+
+.ticket-section .content {
+    width: 55%;
+}
+
+.ticket-section h2 {
+    font-size: 28px;
+    color: #e91e63;
+    margin-bottom: 20px;
+}
+
+.ticket-section p {
+    font-size: 16px;
+    color: #fff;
+    margin-bottom: 20px;
+}
+
+.book-tickets-button {
+    padding: 10px 20px;
+    background-color: #e91e63;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    cursor: pointer;
+    font-size: 18px;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.book-tickets-button:hover {
+    background-color: #d81b60;
+    transform: scale(1.05);
+}
+.live-streaming {
+    display: flex;
+    align-items: center;
+    margin-bottom: 50px;
+    text-align: left;
+}
+
+.live-streaming img {
+    width: 40%;
+    border-radius: 10px;
+    margin-right: 5%;
+}
+
+.live-streaming .content {
+    width: 55%;
+}
+
+.live-streaming h2 {
+    font-size: 28px;
+    color: #e91e63;
+    margin-bottom: 20px;
+}
+
+.live-streaming p {
+    font-size: 16px;
+    color: #fff;
+    margin-bottom: 20px;
+}
+
+.live-streaming-button {
+    padding: 10px 20px;
+    background-color: #e91e63;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    cursor: pointer;
+    font-size: 18px;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.live-streaming-button:hover {
+    background-color: #d81b60;
+    transform: scale(1.05);
+}
+
+.music-cart {
+    display: flex;
+    align-items: center;
+    margin-bottom: 50px;
+    text-align: left;
+}
+
+.music-cart img {
+    width: 40%;
+    border-radius: 10px;
+    margin-left: 5%;
+    order: 2; /* Ensure the image is on the right side */
+}
+
+.music-cart .content {
+    width: 55%;
+    order: 1; /* Ensure the content is on the left side */
+}
+
+.music-cart h2 {
+    font-size: 28px;
+    color: #e91e63;
+    margin-bottom: 20px;
+}
+
+.music-cart p {
+    font-size: 16px;
+    color: #fff;
+    margin-bottom: 20px;
+}
+
+.my-cart-button {
+    padding: 10px 20px;
+    background-color: #e91e63;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    cursor: pointer;
+    font-size: 18px;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.my-cart-button:hover {
+    background-color: #d81b60;
+    transform: scale(1.05);
+}
+
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">MusiCon</div>
+            <nav>
+                <a action="/new" href="{{'new'}}">Profile</a>
+                <a href="#">Event Discovery</a>
+                <a href="#">Ticket</a>
+                <a action="/music" href="{{'music'}}">music</a>
+                <a action="/indexo" href="{{'index1'}}">recommendation</a>
+                
+            </nav>
+            <div class="auth-buttons">
+                <button class="sign-up">Sign Up</button>
+                <button class="login">Login</button>
+            </div>
+        </header>
+        <main>
+            <section class="intro">
+                <div class="flex-container">
+                    <div class="flex-item">
+                        <h1>Connect With Live music<br>Artist and Fan World Wide!!</h1>
+                        <button class="join-now">Join Now</button>
+                        <p>Enhancing the live music experience can create a stronger connection between artists and fans, delivering a more immersive and interactive atmosphere.</p>
+                    </div>
+                    <div class="flex-item">
+                        <img src="/static/gitar.png" alt="Intro Image">
+                    </div>
+                </div>
+            </section>
+            <h2>Upcoming Events</h2>
+            <div class="event-list">
+                <div class="event">
+                    <img src="/static/im1.png" alt="Live Music Trio">
+                    <h3>Live Music Trio</h3>
+                    <p>Alex, Sam, Max</p>
+                </div>
+                <div class="event">
+                    <img src="/static/im2.png" alt="Live Jam Session">
+                    <h3>Live Jam Session</h3>
+                    <p>Music Hub Studio</p>
+                </div>
+                <div class="event">
+                    <img src="/static/im3.png" alt="Time to Rock">
+                    <h3>Time to Rock</h3>
+                    <p>Lisa Rythms</p>
+                </div>
+            </div>
+            <section class="live-streaming">
+                <img src="/static/consert.png" alt="Live Streaming">
+                <div class="content">
+                    <h2>Join Us for a Spectacular Live Streaming Concert!</h2>
+                    <p>Get ready to be transported into the electrifying world of live music, right from the comfort of your home! Our live streaming concert brings you closer to your favorite artists like never before. Feel the energy, connect with the beats, and immerse yourself in an unforgettable musical journey.</p>
+                    <button class="live-streaming-button">Live Streaming</button>
+                </div>
+            </section>
+            
+            <section class="music-cart">
+                <div class="content">
+                    <h2>Your Personal Music Cart!</h2>
+                    <p>Easily access and enjoy your favorite tunes anytime, anywhere. 🎶 Convenience Meets Melody! 🎶</p>
+                    <button class="my-cart-button">My Cart</button>
+                </div>
+                <img src="/static/recomend.png" alt="Music Cart">
+            </section>
+            
+            <section class="ticket-section">
+                <img src="/static/ticket.png" alt="Book Tickets">
+                <div class="content">
+                    <h2>Secure Your Spot at the Concert!</h2>
+                    <p>🎟️ Buy Your Ticket Now! 🎟️<br>Don't miss out on an unforgettable live music experience. Purchase your ticket today and get ready to enjoy exclusive performances, real-time artist interactions, and high-quality streaming from the comfort of your home.</p>
+                    <button class="book-tickets-button">Book Tickets</button>
+                </div>
+            </section>
+            
+        </main>
+        <footer>
+            <div class="footer-content">
+                <div class="footer-links">
+                    <a href="#">Team</a>
+                    <a href="#">Fan Club</a>
+                    <a href="#">FAQ</a>
+                    <a href="#">Help</a>
+                    <a href="#">Support</a>
+                </div>
+                <div class="footer-logo">MusiCon</div>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>

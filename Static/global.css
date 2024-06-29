@@ -1,0 +1,29 @@
+body {
+    margin: 0;
+    line-height: normal;
+}
+
+:root {
+    /* fonts */
+    --font-itim: Itim;
+    --font-ibm-plex-sans-hebrew: "IBM Plex Sans Hebrew";
+    --font-ibm-plex-sans-condensed: "IBM Plex Sans Condensed";
+    --font-kanit: Kanit;
+
+    /* font sizes */
+    --font-size-45xl: 64px;
+    --font-size-17xl: 36px;
+    --font-size-21xl: 40px;
+    --font-size-5xl: 24px;
+    --font-size-13xl: 32px;
+    --font-size-29xl: 48px;
+
+    /* Colors */
+    --color-white: #fff;
+    --color-blueviolet: #b948ff;
+    --color-darkmagenta: #7a008d;
+
+    /* Border radiuses */
+    --br-8xl: 27px;
+    --br-6xs: 7px;
+}

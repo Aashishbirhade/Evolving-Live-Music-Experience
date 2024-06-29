@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Live Music App</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Login</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="{{ url_for('index') }}">Home</a></li>
+            <li><a href="{{ url_for('register') }}">Register</a></li>
+        </ul>
+    </nav>
+    <main>
+        <section>
+            <h2>Login to your account</h2>
+            <form action="{{ url_for('login') }}" method="post">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+
+                <button type="submit">Login</button>
+            </form>
+            <h3>OR</h3>
+
+            
+
+{% if not session.email %}
+                <a href="{{ url_for('login_google') }}">Login with Google</a><br><br>
+                <a href="{{ url_for('login_facebook') }}">Login with Facebook</a>
+            {% else %}
+                <li><a href="#">Logged in as: {{ session.email }}</a></li>
+                <li><a href="{{ url_for('logout') }}">Logout</a></li>
+            {% endif %}        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Live Music App</p>
+    </footer>
+</body>
+</html>

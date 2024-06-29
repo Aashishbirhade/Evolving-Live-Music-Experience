@@ -1,0 +1,15 @@
+<!doctype html>
+<html>
+<head>
+    <title>Recommendations</title>
+</head>
+<body>
+    <h1>Recommendations</h1>
+    <ul>
+        {% for event in recommendations %}
+            <li>{{ event.name }} - {{ event.artist }} - {{ event.genre }} - {{ event.date }} - {{ event.location }}</li>
+        {% endfor %}
+    </ul>
+    <a href="{{ url_for('index') }}">Home</a>
+</body>
+</html>

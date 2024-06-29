@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rhythm</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Welcome to Live Music App</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="{{ url_for('index') }}">Home</a></li>
+            {% if not session.email %}
+                <li><a href="{{ url_for('login_google') }}">Login with Google</a></li>
+                <li><a href="{{ url_for('login_facebook') }}">Login with Facebook</a></li>
+            {% else %}
+                <li><a href="#">Logged in as: {{ session.email }}</a></li>
+                <li><a href="{{ url_for('logout') }}">Logout</a></li>
+            {% endif %}
+            <li><a href="{{ url_for('register') }}">Register</a></li>
+            <li><a href="{{ url_for('login') }}">Login</a></li>
+            <li><a href="{{ url_for('events') }}">Events</a></li>
+            <li><a href="{{ url_for('recommendations') }}">Recommendations</a></li>
+            <li><a href="{{ url_for('trending') }}">Trending Events</a></li>
+        </ul>
+    </nav>
+    <main>
+        <section>
+            <h2>Discover Live Music</h2>
+            <p>Connect with your favorite artists and explore live music events happening around you.</p>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Live Music App</p>
+    </footer>
+</body>
+</html>

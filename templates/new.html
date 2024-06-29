@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MusiCon Profile</title>
+    <style>
+        body {
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    background-color: #121212;
+    color: #fff;
+}
+
+.container {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+}
+
+.logo {
+    font-size: 28px;
+    color: #e91e63;
+    font-weight: bold;
+}
+
+nav a {
+    margin: 0 15px;
+    text-decoration: none;
+    color: #fff;
+    font-size: 16px;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: #e91e63;
+}
+
+.auth-buttons {
+    display: flex;
+}
+
+.auth-buttons button {
+    margin-left: 10px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.sign-up {
+    background-color: #e91e63;
+    color: #fff;
+}
+
+.sign-up:hover {
+    background-color: #d81b60;
+    transform: scale(1.05);
+}
+
+.login {
+    background-color: #7b1fa2;
+    color: #fff;
+}
+
+.login:hover {
+    background-color: #6a1b9a;
+    transform: scale(1.05);
+}
+
+.profile-section {
+    display: flex;
+    margin-top: 30px;
+    background: #1f1f1f;
+    border-radius: 15px;
+    padding: 20px;
+}
+
+.profile-picture {
+    flex: 1;
+    text-align: center;
+    border-right: 2px solid #e91e63;
+    padding-right: 20px;
+}
+
+.profile-picture img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 5px solid #e91e63;
+    transition: transform 0.3s;
+}
+
+.profile-picture img:hover {
+    transform: scale(1.1);
+}
+
+.upload-button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #e91e63;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.upload-button:hover {
+    background-color: #d81b60;
+    transform: scale(1.05);
+}
+
+.personal-info {
+    flex: 2;
+    margin-left: 40px;
+}
+
+.personal-info h2, .personal-info h3 {
+    color: #e91e63;
+    margin-bottom: 10px;
+    border-bottom: 2px solid #e91e63;
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+.personal-info form {
+    display: flex;
+    flex-direction: column;
+}
+
+.personal-info label {
+    margin-top: 15px;
+    font-size: 16px;
+}
+
+.personal-info input[type="text"],
+.personal-info input[type="email"],
+.personal-info input[type="password"] {
+    padding: 12px;
+    margin-top: 5px;
+    border: none;
+    border-radius: 5px;
+    background-color: #333;
+    color: #fff;
+    font-size: 16px;
+}
+
+.favorite-singers input {
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+.profile-type input {
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+footer {
+    margin-top: 40px;
+    padding: 20px 0;
+    background-color: #1f1f1f;
+    border-top: 2px solid #e91e63;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer-links a {
+    margin: 0 15px;
+    text-decoration: none;
+    color: #fff;
+    font-size: 16px;
+    transition: color 0.3s;
+}
+
+.footer-links a:hover {
+    color: #e91e63;
+}
+
+.footer-logo {
+    font-size: 24px;
+    color: #e91e63;
+    font-weight: bold;
+}
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">MusiCon</div>
+            <nav>
+                <a action="/new" href="{{'new'}}">Profile</a>
+                <a href="#">Event Discovery</a>
+                <a href="#">Ticket</a>
+                <a action="/music" href="{{'music'}}">music</a>
+                <a action="/indexo" href="{{'index1'}}">recommendation</a>
+            </nav>
+            <div class="auth-buttons">
+                <button class="sign-up">Sign Up</button>
+                <button class="login">Login</button>
+            </div>
+        </header>
+        <main>
+            <div class="profile-section">
+                <div class="profile-picture">
+                    <img src="/static/pro.webp" alt="Profile Picture">
+                    <button class="upload-button">Upload Photo</button>
+                </div>
+                <div class="personal-info">
+                    <h2>Personal Information</h2>
+                    <form>
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" value="John Doe">
+                        
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" value="john.doe@example.com">
+                        
+                        <label for="username">Username</label>
+                        <input type="text" id="username" name="username" value="johndoe123">
+                        
+                        <label for="password">Password</label>
+                        <input type="password" id="password" name="password" value="password123">
+                        
+                        <label for="contact">Contact</label>
+                        <input type="text" id="contact" name="contact" value="+1234567890">
+                        
+                        <h3>Favorite Singers</h3>
+                        <div class="favorite-singers">
+                            <input type="checkbox" id="arijit" name="singer" value="Arijit">
+                            <label for="arijit">Arijit</label><br>
+                            <input type="checkbox" id="sonu" name="singer" value="Sonu">
+                            <label for="sonu">Sonu</label><br>
+                            <input type="checkbox" id="badshah" name="singer" value="Badshah">
+                            <label for="badshah">Badshah</label><br>
+                            <input type="checkbox" id="shreya" name="singer" value="Shreya">
+                            <label for="shreya">Shreya</label><br>
+                            <input type="checkbox" id="atif" name="singer" value="Atif">
+                            <label for="atif">Atif</label><br>
+                            <input type="checkbox" id="adil" name="singer" value="Adil">
+                            <label for="adil">Adil</label>
+                        </div>
+                        
+                        <h3>Profile Type</h3>
+                        <div class="profile-type">
+                            <input type="radio" id="fan" name="profile-type" value="Fan" checked>
+                            <label for="fan">Fan</label>
+                            <input type="radio" id="artist" name="profile-type" value="Artist">
+                            <label for="artist">Artist</label>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </main>
+        <footer>
+            <div class="footer-content">
+                <div class="footer-links">
+                    <a href="#">Team</a>
+                    <a href="#">Fan Club</a>
+                    <a href="#">FAQ</a>
+                    <a href="#">Help</a>
+                    <a href="#">Support</a>
+                </div>
+                <div class="footer-logo">MusiCon</div>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>
